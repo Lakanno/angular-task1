@@ -1,0 +1,28 @@
+<button class="btn btn-danger mb-5" >Delete</button>
+
+<div class="container">
+    <table class="table table-striped">
+        <thead>
+          <tr class="table-dark">
+            <th scope="col">N</th>
+            <td scope="col">Name</td>
+            <td scope="col">Lastname</td>
+            <td scope="col">Age</td>
+            <td scope="col">Email</td>
+            <td scope="col">Number</td>
+            <td scope="col">Action</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of users" [ngClass]="user.done ? 'bg-info' : ''" >
+            <th scope="row"> {{user.id}} </th>
+            <td>{{user.name}}</td>
+            <td>{{user.lastName}}</td>
+            <td>{{user.age}}</td>
+            <td>{{user.email}}</td>
+            <td>{{user.mobile}}</td>
+            <td> <button class="btn btn-success" (click)="onSwitchColor(user.id)" (click)="deleteUser(user.id)"> Select</button> </td>
+          </tr>
+        </tbody>
+      </table>
+</div>
